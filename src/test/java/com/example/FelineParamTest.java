@@ -26,7 +26,7 @@ public class FelineParamTest {
         };
     }
     @Test
-    public void getKittens() {
+    public void getKittensTest() {
         Feline feline = new Feline();
         int actual = feline.getKittens(numberOfKitten);
         assertEquals(expected, actual);

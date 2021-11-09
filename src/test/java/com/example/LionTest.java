@@ -17,14 +17,14 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void doesFemaleHaveMane() throws Exception {
+    public void doesFemaleHaveManeTest() throws Exception {
         Lion lion = new Lion(feline, "Самка");
         boolean actual = lion.doesHaveMane();
         boolean expected = false;
         assertEquals(expected, actual);
     }
     @Test
-    public void doesMaleHaveMane() throws Exception {
+    public void doesMaleHaveManeTest() throws Exception {
         Lion lion = new Lion(feline, "Самец");
         boolean actual = lion.doesHaveMane();
         boolean expected = true;
@@ -32,13 +32,14 @@ public class LionTest {
     }
 
    @Test(expected = Exception.class)
-   public void doesHaveManeException() throws Exception {
+   public void doesHaveManeExceptionTest() throws Exception{
+
        Lion lion = new Lion(feline, "Самец1");
        lion.doesHaveMane();
    }
 
     @Test
-    public void LionGetFood() throws Exception{
+    public void lionGetFoodTest() throws Exception{
         Lion lion = new Lion(feline, "Самец");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
@@ -47,7 +48,7 @@ public class LionTest {
     }
 
     @Test
-    public void LionGetKittens() throws Exception{
+    public void lionGetKittensTest() throws Exception{
         Lion lion = new Lion(feline, "Самец");
         int expectedKittens = 0;
         int actualKittens = lion.getKittens();

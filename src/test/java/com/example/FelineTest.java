@@ -15,7 +15,7 @@ import static org.mockito.Mockito.spy;
 public class FelineTest {
 
     @Test
-    public void testEatMeat() throws Exception {
+    public void eatMeatTest() throws Exception {
         Feline feline = spy(new Feline());
         Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         List<String> actual = feline.eatMeat();
@@ -24,14 +24,14 @@ public class FelineTest {
     }
 
     @Test
-    public void GetFamilyTest() {
+    public void getFamilyTest() {
         Feline feline = new Feline();
         String expectedFamily ="Кошачьи";
         String actualFamily = feline.getFamily();
         Assert.assertEquals("Семья указана не верно", expectedFamily,actualFamily);
     }
     @Test
-    public void FelineGetKittens() {
+    public void felineGetKittensTest() {
         Feline feline = new Feline();
         int expectedKittens = 1;
         int actualKittens = feline.getKittens();
